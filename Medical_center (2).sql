@@ -7,26 +7,34 @@
 
 CREATE TABLE "medical_center" (
     "medi_id" int Serial NOT NULL,
-    "Medical_Center_name" String   NOT NULL,
-    "Doctor_name" string   NOT NULL
+    "Medical_Center_name" Text   NOT NULL,
+    "Doctor_name" Text   NOT NULL,
+    Speciality TEXT
 );
 
 CREATE TABLE "patients_name" (
     "pat_id" int   NOT NULL,
-    "pat_name" Stirng   NOT NULL
-    'medi_id' ForeignKey REFERENCES medical_center(medi_id)
+    "pat_name" Text   NOT NULL,
+    date_of_birth Not NULL,
+    insurance_name Text
 );
 
 CREATE TABLE "Diseases" (
     "dis_id" int   NOT NULL,
-    "dis_name" String   NOT NULL
+    "dis_name" Text   NOT NULL
 );
 
-CREATE TABLE "patient_record" (
+
+CREATE TABLE "visits" (
     "id" int   NOT NULL,
-    "medi_id" int  REFERENCES patients_name(medi_id),
-    "pat_id" int  REFERENCES medical_center(pat_id) ,
-    "dis_id" int   REFERENCES medical_center(dis_id)
+    medi_id Foreign Key,
+    pat_id Foreign Key,
+    diagonesd_id Foreign Key
+)
+
+CREATE TABLE diagonesd (
+    id int PRIMARY Key,
+    dis_id Foreign Key
 )
 
 INSERT INTO medical_center (medical_Center_name ,doctor_name) VALUES ('Palo Alto Medical Center', 'Dr.Shah'),
