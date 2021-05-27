@@ -18,7 +18,7 @@ CREATE TABLE "patients_name" (
     date_of_birth Not NULL,
     insurance_name Text
 );
-
+4
 CREATE TABLE "Diseases" (
     "dis_id" int   NOT NULL,
     "dis_name" Text   NOT NULL
@@ -32,7 +32,7 @@ CREATE TABLE "visits" (
     diagonesd_id Foreign Key
 )
 
-CREATE TABLE diagonesd (
+CREATE TABLE diagones(
     id int PRIMARY Key,
     dis_id Foreign Key
 )
