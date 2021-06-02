@@ -5,43 +5,42 @@
 -- To reset the sample schema, replace everything with
 -- two dots ('..' - without quotes).
 
-CREATE TABLE "medical_center" (
-    "medi_id" int Serial NOT NULL,
-    "Medical_Center_name" Text   NOT NULL,
-    "Doctor_name" Text   NOT NULL,
-    Speciality TEXT
+CREATE TABLE medical_center (
+    "medi_id" INT Serial NOT NULL,
+    "Medical_Center_name" Text NOT NULL,
+    "Doctor_name" Text NOT NULL
 );
 
-CREATE TABLE "patients_name" (
-    "pat_id" int   NOT NULL,
-    "pat_name" Text   NOT NULL,
-    date_of_birth Not NULL,
-    insurance_name Text
+CREATE TABLE patients (
+    "pat_id" INT NOT NULL,
+    "pat_name" Text NOT NULL,
+    "date_of_birth" Not NULL,
+    "insurance_name" Text
 );
-4
-CREATE TABLE "Diseases" (
-    "dis_id" int   NOT NULL,
-    "dis_name" Text   NOT NULL
+
+CREATE TABLE diseases (
+    "dis_id" INT NOT NULL,
+    "dis_name" Text NOT NULL
 );
 
 
-CREATE TABLE "visits" (
-    "id" int   NOT NULL,
-    medi_id Foreign Key,
-    pat_id Foreign Key,
-    diagonesd_id Foreign Key
+CREATE TABLE visits(
+    "id" INT   NOT NULL,
+    "medi_id" Foreign Key,
+    "pat_id" Foreign Key,
+    "diagnosis_id" Foreign Key
 )
 
-CREATE TABLE diagones(
-    id int PRIMARY Key,
-    dis_id Foreign Key
+CREATE TABLE diagnosis(
+    "id" INT PRIMARY Key,
+    "dis_id" Foreign Key
 )
 
 INSERT INTO medical_center (medical_Center_name ,doctor_name) VALUES ('Palo Alto Medical Center', 'Dr.Shah'),
 ('Palo Alto Medical Center','Dr.Kaur'),
 ('Instant care Center','Dr.Bhatt'),
 ('Shutter Health','Dr.S.M'),
-('SHutter Health','Dr.John')
+('Shutter Health','Dr.John')
 
 Insert INTO patients_name( pat_name) VALUES ('Tom'),('Jerry'),('stieve')
 
